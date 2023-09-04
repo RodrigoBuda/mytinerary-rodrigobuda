@@ -12,6 +12,9 @@ let schema = new Schema({
   featureLocation: { type: String, default: "edit later" },
   admin_id: { type: Types.ObjectId, required: true, ref: "users" },
   //para relacionar datos en mongo es necesario REFERENCIAR EL DATO HACIA LA COLECCION QUE NECESITO RELACIONARME
+},
+{
+  timestamps: true
 });
 
 //estoy parado en el modelo City de la coleccion cities

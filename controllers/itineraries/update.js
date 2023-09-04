@@ -8,7 +8,7 @@ export default async(req, res, next) => {
       {new:true}).select("name price photo");
       return res.status(200).json({
         success: true,
-        message: "Itinerary Updated succesfully!",
+        message: "Itinerary Updated",
         response: updatedItinerary
       })
   } catch (error) {
