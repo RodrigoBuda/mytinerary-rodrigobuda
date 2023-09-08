@@ -11,7 +11,8 @@ export default async (req, res, next) => {
             //le agrego la propiedad de busqueda
             //y le asigno el valor que me envia el cliente en la quey
         }
-    let allItineraries = await Itinerary.find(queries, '-__v -createdAt -updatedAt').populate({
+    let allItineraries = await Itinerary.find(queries, '-__v -createdAt -updatedAt')
+    .populate({
       path: "city_id",
       select: "city photo admin_id",
       populate: {

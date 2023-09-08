@@ -1,18 +1,28 @@
-import Itinerary from '../../models/Itinerary.js';
+import { response } from "express";
+import Itinerary from "../../models/Itinerary.js";
 
-export default async(req, res, next) => {
+export default async (req, res, next) => {
   try {
-    let updatedItinerary = await Itinerary.findByIdAndUpdate(
-      req.params.u_id,
-      req.body,
-      {new:true}).select("name price photo");
+    let { u_id } = req.params;
+    let data = req.body;
+
+    let updatedItinerary = await Itinerary.findOneAndUpdate({ _id: u_id }, data, {
+      new: true,
+    }).select("name price photo");
+    if (updatedItinerary) {
       return res.status(200).json({
         success: true,
         message: "Itinerary Updated",
-        response: updatedItinerary
-      })
+        response: updatedItinerary,
+      });
+    } else {
+      return res.status(404).json({
+        success: false,
+        message: "itinerary not found",
+        response: null,
+      });
+    }
   } catch (error) {
-    next(error)
-    
+    next(error);
   }
-}
+};

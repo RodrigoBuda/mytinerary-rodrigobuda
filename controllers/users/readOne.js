@@ -11,7 +11,7 @@ export default async (req, res, next) => {
         success: true,
         message: "users found",
         response: oneUser,
-      });
+            });
     } else {
       return res.status(400).json({
         success: false,

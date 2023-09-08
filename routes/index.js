@@ -1,9 +1,9 @@
 import express from "express";
 //el enrutador principal va a llamar a TODOS los recursos y los va a enrutar
 import userRouter from "./users.js";
-import cityRouter from "./cities.js";
-import itineraryRouter from "./itineraries.js";
-import activityRouter from "./activities.js";
+import citiesRouter from "./cities.js";
+import itinerariesRouter from "./itineraries.js";
+import activitiesRouter from "./activities.js";
 
 
 
@@ -21,9 +21,9 @@ router.use("/users", userRouter);
 //1- la palabrita con la que se va a enrutar
 //2- el enrutador que tengo que conectar
 
-router.use("/cities", cityRouter);
-router.use("/itineraries", itineraryRouter);
-router.use("/activities", activityRouter);
+router.use("/cities", citiesRouter);
+router.use("/itineraries", itinerariesRouter);
+router.use("/activities", activitiesRouter);
 
 
 
