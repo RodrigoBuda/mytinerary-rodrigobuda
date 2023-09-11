@@ -18,6 +18,8 @@ let schema = new Schema({
   }, //el usuario puede subir foto pero si no sube, se muestra la foto por defecto
   password: { type: String, required: true },
   country: { type: String, required: true },
+},{
+  timestamps: true
 });
 //para crear un modelo de datos utilizo el metodo model
 //pasando como parametros donde tengoo que crear los documentos y con que forma

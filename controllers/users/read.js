@@ -4,7 +4,7 @@ export default async (req, res) => {
   //req: objeto con todos los requerimientos que envia el cliente
   //res: objetoo de respuesta a devolver al cliente
   try {
-    let allUsers = await User.find();
+    let allUsers = await User.find().sort({name:1}).limit(6);
     //find BUSCA todos (en este caso, usuarios)
     return res.status(200).json({
       success: true,

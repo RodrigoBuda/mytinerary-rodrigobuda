@@ -4,6 +4,7 @@ import userRouter from "./users.js";
 import citiesRouter from "./cities.js";
 import itinerariesRouter from "./itineraries.js";
 import activitiesRouter from "./activities.js";
+import authRouter from "./auth.js";
 
 
 
@@ -25,7 +26,7 @@ router.use("/cities", citiesRouter);
 router.use("/itineraries", itinerariesRouter);
 router.use("/activities", activitiesRouter);
 
-
+router.use('/auth', authRouter)
 
 
 export default router;
